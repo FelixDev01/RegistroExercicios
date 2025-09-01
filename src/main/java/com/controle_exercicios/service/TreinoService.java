@@ -9,11 +9,13 @@ import com.controle_exercicios.entity.enums.Tipo;
 import com.controle_exercicios.repository.TreinoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class TreinoService {
 
     @Autowired
