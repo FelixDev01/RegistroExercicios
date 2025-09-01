@@ -1,26 +1,24 @@
-package com.controle_exercicios.entity;
+package com.controle_exercicios.dto;
 
 import com.controle_exercicios.entity.enums.Intensidade;
 import com.controle_exercicios.entity.enums.Tipo;
-import jakarta.persistence.*;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.time.LocalDate;
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-public class Treino {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Enumerated(EnumType.STRING)
+@NoArgsConstructor
+@AllArgsConstructor
+public class TreinoUpdateDTO {
     private Tipo tipo;
+    @Positive
     private Integer duracao;
+    @PastOrPresent
     private LocalDate data;
-    @Enumerated(EnumType.STRING)
     private Intensidade intensidade;
-
 }
